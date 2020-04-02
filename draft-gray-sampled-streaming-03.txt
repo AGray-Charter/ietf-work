@@ -5,8 +5,8 @@
 OPSAWG                                                           A. Gray
 Internet-Draft                                    Charter Communications
 Intended status: Informational                               L.J. Wobker
-Expires: 2 July 2020                                       Cisco Systems
-                                                        30 December 2019
+Expires: 4 October 2020                                    Cisco Systems
+                                                            2 April 2020
 
 
                        Sampled Traffic Streaming
@@ -46,21 +46,21 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 July 2020.
+   This Internet-Draft will expire on 4 October 2020.
 
 
 
 
 
 
-Gray & Wobker              Expires 2 July 2020                  [Page 1]
+Gray & Wobker            Expires 4 October 2020                 [Page 1]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
 Copyright Notice
 
-   Copyright (c) 2019 IETF Trust and the persons identified as the
+   Copyright (c) 2020 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Gray & Wobker              Expires 2 July 2020                  [Page 2]
+Gray & Wobker            Expires 4 October 2020                 [Page 2]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
 1.1.  Requirements Language
@@ -165,9 +165,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                  [Page 3]
+Gray & Wobker            Expires 4 October 2020                 [Page 3]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
    +-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -214,28 +214,30 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
    Packet Sampling (PSAMP) from RFC 5476 [RFC5476] shares some of the
    characteristics of Sampled Streaming, and parts of its YANG model as
    documented in RFC 6728 [RFC6728] are in fact imported into this one
-   to share concepts where possible.  However, Sampled Streaming differs
-   primarily in the ability to include information that is normally
-   internal to device that provides information about the packet's
-   handling through the device, and to have the Replicator specify the
+   to share concepts where possible (notably re-using the concepts of
+   observation points and selectors).  However, Sampled Streaming
+   differs primarily in the ability to include information that is
+   normally internal to device that provides information about the
 
 
 
-Gray & Wobker              Expires 2 July 2020                  [Page 4]
+Gray & Wobker            Expires 4 October 2020                 [Page 4]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
-   outgoing packet format in a very dynamic fashion that suits itself as
-   best as possible.  This is done to allow this replication to be done
-   natively on relatively low feature set forwarding hardware and to
-   ensure the only usage of high-capability CPU resources on the
-   Replicator is in the initial setup and negotiation.  All other
-   aspects have been made to allow the Replicator to do the least amount
-   of work as possible, to extract as much information as possible, and
-   get it sent to the Receiver who is presumed to have orders of
-   magnitudes greater compute capability available.  Other changes to
-   the setup and configuration are wrapped around this primary goal.
+   packet's handling through the device, and to have the Replicator
+   specify the outgoing packet format in a very dynamic fashion that
+   suits itself as best as possible.  This is done to allow this
+   replication to be done natively on relatively low feature set
+   forwarding hardware and to ensure the only usage of high-capability
+   CPU resources on the Replicator is in the initial setup and
+   negotiation.  All other aspects have been made to allow the
+   Replicator to do the least amount of work as possible, to extract as
+   much information as possible, and get it sent to the Receiver who is
+   presumed to have orders of magnitudes greater compute capability
+   available.  Other changes to the setup and configuration are wrapped
+   around this primary goal.
 
 2.  Use Cases
 
@@ -275,11 +277,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-
-
-Gray & Wobker              Expires 2 July 2020                  [Page 5]
+Gray & Wobker            Expires 4 October 2020                 [Page 5]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
 2.2.  Use Case 2: Network Behavior Verification
@@ -333,9 +333,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                  [Page 6]
+Gray & Wobker            Expires 4 October 2020                 [Page 6]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
    Examples of past incidents where this may have been useful are the
@@ -389,9 +389,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                  [Page 7]
+Gray & Wobker            Expires 4 October 2020                 [Page 7]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
    *  'samplers' - A list of any current samplers already active on this
@@ -445,9 +445,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                  [Page 8]
+Gray & Wobker            Expires 4 October 2020                 [Page 8]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
       Client would filter at least on a specific interface and
@@ -501,9 +501,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                  [Page 9]
+Gray & Wobker            Expires 4 October 2020                 [Page 9]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
    finished, and the 'proposals' branch MUST be read-only until the
@@ -557,9 +557,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 10]
+Gray & Wobker            Expires 4 October 2020                [Page 10]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
    *  MUST either install the requested sampling stream if possible,
@@ -613,9 +613,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 11]
+Gray & Wobker            Expires 4 October 2020                [Page 11]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
    length fields (as a single variable length can be deduced from the
@@ -669,9 +669,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 12]
+Gray & Wobker            Expires 4 October 2020                [Page 12]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
    |           |       |                        | is based off of,     |
@@ -725,9 +725,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 13]
+Gray & Wobker            Expires 4 October 2020                [Page 13]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
      +-----------+-------+--------------------+---------------------+
@@ -781,9 +781,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 14]
+Gray & Wobker            Expires 4 October 2020                [Page 14]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
 5.  IANA Considerations
@@ -837,9 +837,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 15]
+Gray & Wobker            Expires 4 October 2020                [Page 15]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
 7.  Acknowledgments
@@ -884,18 +884,18 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 8.2.  Informative References
 
    [I-D.tuexen-opsawg-pcapng]
-              Tuexen, M., Risso, F., Bongertz, J., and G. Harris, "PCAP
-              Next Generation (PCAPNG) Dump File Format", Work in
-              Progress, Internet-Draft, draft-tuexen-opsawg-pcapng-00,
-              26 June 2014, <http://www.ietf.org/internet-drafts/draft-
-              tuexen-opsawg-pcapng-00.txt>.
+              Tuexen, M., Risso, F., Bongertz, J., Combs, G., Harris,
+              G., and M. Richardson, "PCAP Next Generation (pcapng)
+              Capture File Format", Work in Progress, Internet-Draft,
+              draft-tuexen-opsawg-pcapng-01, 27 March 2020,
+              <http://www.ietf.org/internet-drafts/draft-tuexen-opsawg-
+              pcapng-01.txt>.
 
 
 
-
-Gray & Wobker              Expires 2 July 2020                 [Page 16]
+Gray & Wobker            Expires 4 October 2020                [Page 16]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
 Appendix A.  Yang Model Tree Reference
@@ -949,9 +949,9 @@ Appendix A.  Yang Model Tree Reference
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 17]
+Gray & Wobker            Expires 4 October 2020                [Page 17]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
         |  |        +--rw ipPayloadSize?      uint64
@@ -1005,9 +1005,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 18]
+Gray & Wobker            Expires 4 October 2020                [Page 18]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
            |  |  |  |     +--rw packetInterval    uint32
@@ -1061,9 +1061,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 19]
+Gray & Wobker            Expires 4 October 2020                [Page 19]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
            |  |  |  |  +--ro sampCountBased {psampSampCountBased}?
@@ -1117,9 +1117,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 20]
+Gray & Wobker            Expires 4 October 2020                [Page 20]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
            |  |     |  +--ro meaning?   action-type
@@ -1173,9 +1173,9 @@ Appendix B.  Yang Model
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 21]
+Gray & Wobker            Expires 4 October 2020                [Page 21]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
        "IETF Working Group";
@@ -1229,9 +1229,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 22]
+Gray & Wobker            Expires 4 October 2020                [Page 22]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
          "draft-gray-sampled-streaming-01";
@@ -1285,9 +1285,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 23]
+Gray & Wobker            Expires 4 October 2020                [Page 23]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
          enum ip-v6-dstip {
@@ -1341,9 +1341,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 24]
+Gray & Wobker            Expires 4 October 2020                [Page 24]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
          }
@@ -1397,9 +1397,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 25]
+Gray & Wobker            Expires 4 October 2020                [Page 25]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
          }
@@ -1453,9 +1453,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 26]
+Gray & Wobker            Expires 4 October 2020                [Page 26]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
            description
@@ -1509,9 +1509,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 27]
+Gray & Wobker            Expires 4 October 2020                [Page 27]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
               unknown.";
@@ -1565,9 +1565,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 28]
+Gray & Wobker            Expires 4 October 2020                [Page 28]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
               sampling. 'install-error' MAY contain an explanation.";
@@ -1621,9 +1621,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 29]
+Gray & Wobker            Expires 4 October 2020                [Page 29]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
            description
@@ -1677,9 +1677,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 30]
+Gray & Wobker            Expires 4 October 2020                [Page 30]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
          type psamp:direction;
@@ -1733,9 +1733,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 31]
+Gray & Wobker            Expires 4 October 2020                [Page 31]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
            "Frame length to match on.";
@@ -1789,9 +1789,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 32]
+Gray & Wobker            Expires 4 October 2020                [Page 32]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
              description
@@ -1845,9 +1845,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 33]
+Gray & Wobker            Expires 4 October 2020                [Page 33]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
              description
@@ -1901,9 +1901,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 34]
+Gray & Wobker            Expires 4 October 2020                [Page 34]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
        }
@@ -1957,9 +1957,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 35]
+Gray & Wobker            Expires 4 October 2020                [Page 35]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
          description
@@ -2013,9 +2013,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 36]
+Gray & Wobker            Expires 4 October 2020                [Page 36]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
              }
@@ -2069,9 +2069,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 37]
+Gray & Wobker            Expires 4 October 2020                [Page 37]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
            key "id";
@@ -2125,9 +2125,9 @@ Internet-Draft          Sampled Traffic Streaming          December 2019
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 38]
+Gray & Wobker            Expires 4 October 2020                [Page 38]
 
-Internet-Draft          Sampled Traffic Streaming          December 2019
+Internet-Draft          Sampled Traffic Streaming             April 2020
 
 
            type string {
@@ -2181,4 +2181,4 @@ Authors' Addresses
 
 
 
-Gray & Wobker              Expires 2 July 2020                 [Page 39]
+Gray & Wobker            Expires 4 October 2020                [Page 39]
